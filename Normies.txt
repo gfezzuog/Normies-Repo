@@ -1,0 +1,8 @@
+src/utils/error.c Eliminare i commenti
+src/utils/gnl.c Eliminare i commenti
+src/utils/malloc_stuff.c OK!
+src/utils/old_split.c OK! (Da checkare che worki tutto ho eliminato i commenti troppo lunghi)
+src/utils/split_variant OK! (fill_mv nomi delle variabili midificare, linea di dichiarazione della funzione troppo lunga)
+src/utils/ft_splitvariant OK! lui è il bimbo speciale, contiene solo funa funzione ovvero ft_split_variant perché ce ne stavano troppe nel file di prima anche qui ho eliminato i commenti
+src/utils/utils  Bisogna splittare trypath manca solo quello
+src/utils/utils2 OK! Qui ci ho messo le piccole funzioni di troppo che erano presenti in utils
