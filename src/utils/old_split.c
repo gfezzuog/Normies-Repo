@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:11:37 by sgerace           #+#    #+#             */
-/*   Updated: 2023/03/29 05:12:24 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:20:56 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ int	old_count_w(char *str, char c)
 	return (num);
 }
 
-t_old	*old_struct_create(void)
+t_old	*old_struct_create(char a, int n, const char *string)
 {
 	t_old	*old;
 
 	old = (t_old *)malloc(sizeof(t_old));
-	old->num_w = 0;
-	old->c = '\0';
-	old->s = NULL;
+	old->c = a;
+	old->num_w = n;
+	old->s = string;
 	return (old);
 }
 
@@ -89,10 +89,8 @@ char	**ft_old_split(t_minishell **minip, char const *s, char c)
 	if (!matrix)
 		return (NULL);
 	matrix[num_w] = NULL;
-	old = old_struct_create();
-	old->c = c;
-	old->c = num_w;
-	old->s = s;
+	old = old_struct_create(c, num_w, s);
 	matrix = old_fill_m(minip, matrix, old);
+	free(old);
 	return (matrix);
 }

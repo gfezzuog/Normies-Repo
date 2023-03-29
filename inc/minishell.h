@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:46:19 by sgerace           #+#    #+#             */
-/*   Updated: 2023/03/29 04:58:51 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:01:11 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,6 @@ typedef struct s_xfillmv
 	char c;
 }	t_xfillmv;
 
-typedef struct s_old
-{
-	const char *s;
-	char		c;
-	int			num_w;
-}	t_old;
 
 typedef struct s_xsubstr
 {
@@ -94,6 +88,13 @@ typedef struct s_minishell
 	t_garbage	*garbage;
 	int			fd;
 }	t_minishell;
+
+typedef struct s_old
+{
+	const char *s;
+	char		c;
+	int			num_w;
+}	t_old;
 
 bool	ft_char_red(char c);
 void 	ft_envp_initialize(t_list *new_node);
@@ -179,11 +180,16 @@ char		**ft_old_split(t_minishell **minip, char const *s, char c);
 //char		**ft_old_split(char const *s, char c);
 int			old_count_w(char *str, char c);
 char		**old_fill_m(t_minishell **minip, char	**matrix, t_old *old);
+//char    **old_fill_m(t_minishell **minip, const char *s, char c, char   **matrix, int num_w);
 //char		**old_fill_m(const char *s, char c, char	**matrix, int num_w);
 int			ft_count_commands(t_list **cmd_list);
 char		*ft_trypath(t_minishell **minip, char	*cmd, t_list **envp);
 int			ft_count_rows(char **cmd_m);
 int			ft_update_quotes(char c);
+
+//for normies include
+char	**fill_mv(t_minishell *mini, t_xfillmv *f, const char *s, char **m);
+int		count_wv(char *str, char *c, int toggle, int num);
 
 //pipes
 void		open_pipes(int **pipes, int cmd_num);

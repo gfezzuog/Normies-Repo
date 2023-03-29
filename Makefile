@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 21:39:43 by dgioia            #+#    #+#              #
-#    Updated: 2023/03/29 05:35:08 by gfezzuog         ###   ########.fr        #
+#    Updated: 2023/03/29 15:33:43 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ OBJ	=	$(SRC:.c=.o)
 $(NAME):	$(OBJ)
 			@make -C ./libft
 			@make -C ./ft_printf
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(PRINTF) $(READLINE_MACOS)
+			$(CC) $(CFLAGS) -Wl,--allow-multiple-definition -o $(NAME) $(OBJ) $(LIBFT) $(PRINTF) $(READLINE_MACOS)
 
 all:		$(NAME)
 

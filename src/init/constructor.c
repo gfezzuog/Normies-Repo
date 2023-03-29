@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   constructor.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgerace <sgerace@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:33:46 by sgerace           #+#    #+#             */
-/*   Updated: 2023/03/26 11:07:47 by sgerace          ###   ########.fr       */
+/*   Updated: 2023/03/29 16:15:45 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_minishell	*ft_load_envp(t_minishell **minip, char **envp)
 	{
 		new_node = gc_alloc(&mini->garbage, sizeof(t_list), 0);
 		if (new_node == NULL)
-			return (NULL);
+			return (NULL);;
 		split_ret = ft_old_split(minip, envp[i], '=');
 		new_node->key = ft_strdup_m(&mini->garbage, split_ret[0]);
 		new_node->value = ft_strdup_m(&mini->garbage, split_ret[1]);
